@@ -1,9 +1,11 @@
 package mate.academy;
 
+import java.util.Arrays; 
+import java.util.Objects;
 import java.util.concurrent.RecursiveAction;
 
 public class MergeSortAction extends RecursiveAction {
-    private static final Integer THRESHOLD = 2;
+    private static final int THRESHOLD = 2;
     private final int[] array;
     private final int start;
     private final int end;
@@ -33,15 +35,7 @@ public class MergeSortAction extends RecursiveAction {
     }
 
     private void sortPartArray(int[] array, int start, int end) {
-        for (int i = start; i < end; i++) {
-            for (int j = i + 1; j < end; j++) {
-                if (array[i] > array[j]) {
-                    int swapper = array[i];
-                    array[i] = array[j];
-                    array[j] = swapper;
-                }
-            }
-        }
+        Arrays.sort(array, start, end);
     }
 
     private void merge(int[] array, int start, int middle, int end) {
