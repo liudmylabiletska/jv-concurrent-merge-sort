@@ -15,6 +15,7 @@ public class MergeSortAction extends RecursiveAction {
     }
 
     private MergeSortAction(int[] array, int start, int end) {
+        Objects.requireNonNull(array, "array must not be null");
         this.array = array;
         this.start = start;
         this.end = end;
