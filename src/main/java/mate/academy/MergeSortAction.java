@@ -21,7 +21,7 @@ public class MergeSortAction extends RecursiveAction {
     @Override
     protected void compute() {
         if (end - start > THRESHOLD) {
-            int middle = (start + end) / 2;
+            int middle = start + (end - start) / 2;
             RecursiveAction left = new MergeSortAction(array, start, middle);
             RecursiveAction right = new MergeSortAction(array, middle, end);
 
